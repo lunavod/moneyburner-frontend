@@ -1,0 +1,16 @@
+@import '../../helpers.css';
+
+.wrapper {
+  position: relative;
+}
+
+.element {
+  height: 24px;
+  padding: 0 8px;
+}
+
+.list {
+  position: absolute;
+  left: 0;
+  top: 0;
+}

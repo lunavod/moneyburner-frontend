@@ -1,0 +1,91 @@
+@import '../../helpers.css';
+.wrapperWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-1);
+}
+.wrapper {
+  .container {
+    min-height: 56px;
+    background: var(--bg-lighter);
+    border: 1px solid var(--border-lighter);
+    border-radius: 4px;
+    position: relative;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    cursor: text;
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      -webkit-box-shadow: 0 0 0 30px #232323 inset !important;
+      -webkit-text-fill-color: var(--text) !important;
+    }
+
+    &.disabled {
+      opacity: 0.38;
+    }
+
+    &.focused {
+      border-color: #005ac1;
+    }
+
+    &.secondary {
+      background: var(--bg-light);
+      border-color: var(--bg-light);
+      color: var(--text-inactive);
+    }
+
+    .label {
+      position: absolute;
+      left: 16px;
+      line-height: 1em;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.2s;
+
+      &:before {
+        content: ' ';
+        display: block;
+        background: var(--current-bg, var(--bg-light));
+        height: 0.5em;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+      }
+
+      .label-text {
+        position: relative;
+        display: block;
+        z-index: 2;
+        font-size: 1em;
+        opacity: 0.9;
+      }
+    }
+
+    &.focused .label,
+    &:not(.empty) .label {
+      top: 0;
+      left: 12px;
+      padding: 0 4px;
+
+      .label-text {
+        font-size: 0.85em;
+        opacity: 1;
+        color: #005ac1;
+      }
+    }
+
+    .placeholder {
+      line-height: 1em;
+      opacity: 0.6;
+      z-index: 99;
+      position: absolute;
+    }
+  }
+}

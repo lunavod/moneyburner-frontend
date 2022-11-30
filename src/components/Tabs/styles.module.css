@@ -1,0 +1,38 @@
+@import '../../helpers.css';
+
+.wrapper {
+  display: flex;
+  height: 38px;
+
+  .tab {
+    width: 173px;
+    border: 1.5px solid var(--border-darker);
+    color: var(--text-inactive);
+    display: flex;
+    gap: var(--gap-2);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    svg {
+      font-size: 24px;
+    }
+
+    &:first-child {
+      border-radius: 10px 0 0 10px;
+    }
+
+    &:last-child {
+      border-radius: 0 10px 10px 0;
+    }
+
+    &.active {
+      background: var(--border-darker);
+      color: white;
+    }
+  }
+
+  &.small .tab {
+    width: 40px;
+  }
+}

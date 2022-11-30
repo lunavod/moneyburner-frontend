@@ -1,0 +1,71 @@
+.italic {
+  font-style: italic;
+}
+
+.text-subtitles {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.text-h6 {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.text-h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.text-h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.text-h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card {
+  background: var(--bg-light);
+  border-radius: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column,
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.width-50 {
+  width: 50%;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+.pointer {
+  cursor: pointer;
+}

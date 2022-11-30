@@ -1,0 +1,14 @@
+User-agent: *
+Disallow: /login
+Disallow: /registration
+Disallow: /logout
+Disallow: /profile
+
+User-Agent: Yandex
+Disallow: /login
+Disallow: /registration
+Disallow: /logout
+Disallow: /profile
+Clean-Param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&utm_expid&gclid&_openstat&yclid
+
+Sitemap: https://trendymanga.com/sitemap.xml

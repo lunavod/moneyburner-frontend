@@ -1,0 +1,184 @@
+@import './helpers.css';
+
+:root {
+  --max-width: min(1280px, 100vw);
+
+  --text-size-subtitles: 12px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+a {
+  color: var(--brand);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+i,
+em {
+  font-style: italic;
+}
+
+u {
+  text-decoration: underline;
+}
+
+.w-full {
+  width: 100%;
+}
+
+:global {
+  :root {
+    --button-size: -1px;
+    --editor-padding: 26px;
+    --border-radius: 16px;
+  }
+
+  baka-editor {
+    width: 100%;
+    max-height: 400px;
+    overflow: auto;
+    font-size: 0.9em;
+  }
+
+  #wrapper {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    cursor: text;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+    position: relative;
+  }
+
+  #buttons {
+    display: none;
+  }
+
+  #placeholder {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: var(--editor-padding);
+    left: calc(var(--editor-padding) + 1px + var(--button-size));
+    opacity: 0.6;
+    z-index: 0;
+    color: black;
+  }
+
+  #placeholder.invisible {
+    opacity: 0;
+  }
+
+  #editor {
+    width: 100%;
+    height: auto;
+    min-height: 4em;
+    padding: calc(var(--editor-padding) - 1px);
+    /*border-radius: 16px;*/
+    z-index: 1;
+    /*border-radius: 0px var(--border-radius) var(--border-radius) 0;*/
+    border: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+
+  #editor {
+    white-space: pre-wrap;
+  }
+
+  #editor:focus {
+    outline: 0px solid transparent;
+    border-color: rgba(0, 0, 255, 0.24);
+  }
+
+  #editor a {
+    cursor: pointer;
+  }
+
+  #editor .empty {
+    height: 1em;
+  }
+
+  #editor:active {
+    outline: none;
+  }
+
+  #editor .monospace {
+    font-family: Monospace, monospace;
+    background: rgba(0, 0, 2555, 0.1);
+    padding: 2px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  #editor .service {
+    filter: opacity(50%);
+  }
+
+  #editor .code {
+    color: #53bf6b;
+  }
+
+  #editor h1,
+  #editor h2 {
+    white-space: pre-wrap;
+    display: inline;
+    margin: 16px 0 8px 0;
+  }
+
+  #editor blockquote {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    color: #419eff;
+  }
+
+  #editor .service_link_title {
+    color: violet;
+  }
+
+  #editor .service_image_title {
+    color: darkorange;
+  }
+  #modals {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+
+  #modals > div {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+  }
+  #modals > div > * {
+    pointer-events: all;
+  }
+}
