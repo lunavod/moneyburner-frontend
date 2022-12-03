@@ -3,6 +3,7 @@
   grid-template-areas: 'title' 'total' 'accounts';
   grid-template-rows: auto auto 1fr;
   background: #fefbff;
+  padding-bottom: 80px;
 }
 
 .title {
