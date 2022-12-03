@@ -47,6 +47,33 @@ const Navbar = {
       )
     },
   ),
+
+  Location: observer(
+    ({
+      icon,
+      to,
+      name,
+      locations,
+    }: {
+      icon: any
+      to: string
+      name: string
+      locations: string[]
+    }) => {
+      const Icon = icon
+      const active = locations.some((l) =>
+        l === '/' ? location.pathname === '/' : location.pathname.startsWith(l),
+      )
+      return (
+        <Link to={to} styleName="location">
+          <div styleName={clsx('iconWrapper', active && 'active')}>
+            <Icon />
+          </div>
+          <span styleName="name">{name}</span>
+        </Link>
+      )
+    },
+  ),
 }
 
 export default Navbar

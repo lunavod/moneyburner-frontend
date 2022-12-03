@@ -1,0 +1,26 @@
+declare const classNames: {
+  readonly wrapper: 'wrapper'
+  readonly top: 'top'
+  readonly btn: 'btn'
+  readonly right: 'right'
+  readonly title: 'title'
+  readonly formWrapper: 'formWrapper'
+  readonly form: 'form'
+  readonly group: 'group'
+  readonly label: 'label'
+  readonly dateTime: 'dateTime'
+  readonly button: 'button'
+}
+export default classNames
+export type ClassNames =
+  | 'wrapper'
+  | 'top'
+  | 'btn'
+  | 'right'
+  | 'title'
+  | 'formWrapper'
+  | 'form'
+  | 'group'
+  | 'label'
+  | 'dateTime'
+  | 'button'

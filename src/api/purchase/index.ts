@@ -4,9 +4,9 @@ import { plainToInstance } from 'class-transformer'
 import { Purchase } from './purchase'
 
 export class PurchasesApi extends Api {
-  async find(offset = 0, limit = 100) {
+  async find(offset = 0, limit = 100, storeId?: string) {
     const req = await this.axios.get<Purchase[]>('/purchases', {
-      params: { offset, limit },
+      params: { offset, limit, storeId },
     })
     return plainToInstance(Purchase, req.data)
   }

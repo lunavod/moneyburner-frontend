@@ -6,15 +6,22 @@ import { Helmet } from 'react-helmet'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { BreakpointProvider, useCurrentBreakpointName } from 'react-socks'
 
+import BankIcon from '../../assets/icons/myicons/bank.svg'
+import BasketIcon from '../../assets/icons/myicons/basket.svg'
+import StoreIcon from '../../assets/icons/myicons/store.svg'
 import AccountView from '../../pages/AccountView'
 import AccountsList from '../../pages/AccountsList'
 import Purchase from '../../pages/Purchase'
 import PurchaseCreate from '../../pages/PurchaseCreate'
 import PurchaseUpdate from '../../pages/PurchaseUpdate'
+import StoreUpdate from '../../pages/StoreUpdate'
+import StoreView from '../../pages/StoreView'
+import StoresList from '../../pages/StoresList'
 import Transfer from '../../pages/Transfer'
 import TransferCreate from '../../pages/TransferCreate'
 import TransferUpdate from '../../pages/TransferUpdate'
 import { useMobx } from '../../pages/useMobx'
+import Navbar from '../Navbar'
 import ScrollToTop from '../scrollToTop'
 import { GlobalState, GlobalStateContext, useGlobalState } from './globalState'
 import styles from './styles.module.css'
@@ -85,6 +92,7 @@ const App = observer(() => {
           <ScrollToTop>
             <Routes>
               <Route index element={<AccountsList />} />
+              <Route path="/accounts" element={<AccountsList />} />
               <Route path="/accounts/:id" element={<AccountView />} />
 
               <Route path="/purchases/new" element={<PurchaseCreate />} />
@@ -94,8 +102,32 @@ const App = observer(() => {
               <Route path="/transfers/new" element={<TransferCreate />} />
               <Route path="/transfers/:id" element={<Transfer />} />
               <Route path="/transfers/:id/edit" element={<TransferUpdate />} />
+
+              <Route path="/stores" element={<StoresList />} />
+              <Route path="/stores/:id" element={<StoreView />} />
+              <Route path="/stores/:id/edit" element={<StoreUpdate />} />
             </Routes>
           </ScrollToTop>
+          <Navbar.Main>
+            <Navbar.Location
+              to="/accounts"
+              icon={BankIcon}
+              name="Accounts"
+              locations={['/', '/accounts', '/purchases', '/transfers']}
+            />
+            <Navbar.Location
+              to="/stores"
+              icon={StoreIcon}
+              name="Stores"
+              locations={['/stores']}
+            />
+            <Navbar.Location
+              to="/products"
+              icon={BasketIcon}
+              name="Products"
+              locations={['/products']}
+            />
+          </Navbar.Main>
         </div>
       </BreakpointProvider>
     </GlobalStateContext.Provider>
