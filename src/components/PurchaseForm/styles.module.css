@@ -5,6 +5,7 @@
   grid-template-areas: 'top' 'title' 'form' 'button';
   grid-template-rows: auto auto auto 1fr;
   background: #fefbff;
+  padding-bottom: 80px;
 }
 
 .top {
